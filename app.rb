@@ -1,5 +1,5 @@
 require_relative 'authorauth'
-
+require_relative  'authormenu'
 
 
 class Instance
@@ -13,6 +13,8 @@ class Instance
                 authorInstance = AuthorAuth.new
                 if authorInstance.author_login == true
                     puts "You selected Author"
+                    authmenu = AuthorMenu.new
+                    authmenu.main
                 end
             elsif user_type == "2"
                 puts "You selected Viewer"
