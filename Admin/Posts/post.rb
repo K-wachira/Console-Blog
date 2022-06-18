@@ -14,7 +14,7 @@ class Posts
         return
     end
 
-    def display_all_posts(dev)
+    def display_all_posts(dev= true)
         arr = []
         header = ["Index", "Title", "Author",  "Body", "IsPublished", "Publishdate" ]
         arr << header
@@ -28,17 +28,24 @@ class Posts
         end
         arr.to_table
     end 
-
+    def display_one_posts(dev=true, indx)
+        arr = []
+        header = ["Index", "Title", "Author",  "Body", "IsPublished", "Publishdate" ]
+        arr << header
+        temp = [indx]
+        @posts[indx].each do |key, value|
+            temp << value
+        end
+        arr << temp
+        arr.to_table
+    end 
     def get_post_count
         
         count = 0
         @posts.each {|k| count +=1 }
         return count
     end
-
-    
 end
-
 # credits https://stackoverflow.com/questions/36156305/console-table-format-in-ruby
 class Array
     def to_table(header: true)

@@ -1,9 +1,10 @@
 #!/usr/bin/ruby -w
 
 require_relative 'post'
+require_relative 'postmodule'
 
 class Newposts < Posts
-  include postmodule
+  include Postmodule
   def create_post
     @title  = self.new_title("")
     @author= self.new_author("")
@@ -18,7 +19,7 @@ class Newposts < Posts
       "isPublished": @isPublished,
       "publishdate":  @publishdate,
     }
-    add_post( hash, index)
+    add_post( hash, @index)
     return
   end 
 end

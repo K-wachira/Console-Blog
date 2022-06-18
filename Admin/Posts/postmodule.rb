@@ -1,4 +1,4 @@
-module postmodule 
+module Postmodule 
     def new_title(inital)
         puts "Enter the title of your blog. To cancel press q and Enter"
         title = gets.chomp
