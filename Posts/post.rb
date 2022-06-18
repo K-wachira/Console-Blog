@@ -16,7 +16,7 @@ class Posts
 
     def display_all_posts(dev)
         arr = []
-        header = ["#", "Title", "Author",  "Body", "IsPublished", "Publishdate" ]
+        header = ["Index", "Title", "Author",  "Body", "IsPublished", "Publishdate" ]
         arr << header
         @posts.each do |index, post|
             temp = []
